@@ -11,7 +11,7 @@ def open_gedit():
 def coding(fr):
     f = open(fr)
     text = f.read()
-    pgui.write(text, interval=0.05)
+    write(text)
 
 def open_vim(filename):
     pgui.write("vim " + filename, 0.05)
@@ -19,8 +19,19 @@ def open_vim(filename):
     time.sleep(2)
     pgui.press("a")
 
+def write(text):
+    strs = text.split("<")
+    for i, s in enumerate(strs):
+        pgui.write(s, 0.05)
+        if i != len(strs) - 1:
+            pgui.keyDown("shift")
+            pgui.keyDown(",")
+            pgui.keyUp("shift")
+            pgui.keyUp(",")
+
 open_terminal()
 time.sleep(2)
-open_gedit()
+open_vim("main.rs")
 time.sleep(2)
+syntax_on()
 coding("/home/lucky/workspace/nats/src/main.rs")
