@@ -31,7 +31,6 @@ def write(text):
 
 open_terminal()
 time.sleep(2)
-open_vim("main.rs")
+open_gedit()
 time.sleep(2)
-syntax_on()
 coding("/home/lucky/workspace/nats/src/main.rs")
