@@ -29,8 +29,3 @@ def write(text):
             pgui.keyUp("shift")
             pgui.keyUp(",")
 
-open_terminal()
-time.sleep(2)
-open_gedit()
-time.sleep(2)
-coding("/home/lucky/workspace/nats/src/main.rs")
